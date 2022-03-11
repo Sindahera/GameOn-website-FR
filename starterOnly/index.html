@@ -11,11 +11,12 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
       <img alt="logo" src="Logo.png" width="auto" height="auto" />
-    </div>
+      </div>
     <div class="main-navbar">
       
       <a href="#" class="active"><span>Accueil</span></a>
@@ -28,7 +29,7 @@
       </a>
     </div>
     </div>
-  </div>
+  
     <main>
       <div class="hero-section">
         <div class="hero-content">
@@ -54,13 +55,13 @@
 
       <div class="bground">
         <div class="content">
-          <span class="close"></span>
+          <span class="close" id="close"></span>
           <div class="modal-body">
             <form
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              id="form"
             >
               <div
                 class="formData">
@@ -70,9 +71,10 @@
                   type="text"
                   id="first"
                   name="first"
-                  minlength="2"
                 /><br>
+
               </div>
+              <div id="firstNameError"></div>
               <div
                 class="formData">
                 <label>Nom</label><br>
@@ -83,6 +85,8 @@
                   name="last"
                 /><br>
               </div>
+              <div id="lastNameError"></div>
+
               <div
                 class="formData">
                 <label>E-mail</label><br>
@@ -91,8 +95,11 @@
                   type="email"
                   id="email"
                   name="email"
+                  pattern=".+@.+\..+"
                 /><br>
               </div>
+              <div id="emailError"></div>
+
               <div
                 class="formData">
                 <label>Date de naissance</label><br>
@@ -103,11 +110,15 @@
                   name="birthdate"
                 /><br>
               </div>
+              <div id="birthDateError"></div>
+
               <div
                 class="formData">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input type="number" class="text-control" id="quantity" name="quantity">
               </div>
+              <div id="tournamentError"></div>
+
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
                 class="formData">
@@ -117,6 +128,7 @@
                   id="location1"
                   name="location"
                   value="New York"
+                  onclick = "return resetMsg()"
                 />
                 <label class="checkbox-label" for="location1">
                   <span class="checkbox-icon"></span>
@@ -128,6 +140,7 @@
                   id="location2"
                   name="location"
                   value="San Francisco"
+                  onclick = "return resetMsg()"
                 />
                 <label class="checkbox-label" for="location2">
                   <span class="checkbox-icon"></span>
@@ -139,6 +152,7 @@
                   id="location3"
                   name="location"
                   value="Seattle"
+                  onclick = "return resetMsg()"
                 />
                 <label class="checkbox-label" for="location3">
                   <span class="checkbox-icon"></span>
@@ -150,6 +164,7 @@
                   id="location4"
                   name="location"
                   value="Chicago"
+                  onclick = "return resetMsg()"
                 />
                 <label class="checkbox-label" for="location4">
                   <span class="checkbox-icon"></span>
@@ -161,6 +176,7 @@
                   id="location5"
                   name="location"
                   value="Boston"
+                  onclick = "return resetMsg()"
                 />
                 <label class="checkbox-label" for="location5">
                   <span class="checkbox-icon"></span>
@@ -172,11 +188,13 @@
                   id="location6"
                   name="location"
                   value="Portland"
+                  onclick = "return resetMsg()"
                 />
                 <label class="checkbox-label" for="location6">
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
+                <div id="locError"></div>
               </div>
 
               <div
@@ -187,10 +205,11 @@
                   id="checkbox1"
                   checked
                 />
-                <label class="checkbox2-label" for="checkbox1" required>
+                <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
+                <div id="termsError"></div>
                 <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
@@ -204,8 +223,25 @@
                 type="submit"
                 class="button"
                 value="C'est parti"
+                id="btnSubmit"
+                onclick = "return validate();"
               />
             </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="bground-confirmation">
+        <div class="content">
+          <div class="modal-body">
+            <p class="confirmation-text">Merci d'avoir soumis vos informations d'inscription</p>
+            <input
+                class="button btn-submit"
+                type="button"
+                value = "Fermer"
+                id="btnConfirmation"
+                
+              />
           </div>
         </div>
       </div>

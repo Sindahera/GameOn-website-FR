@@ -157,7 +157,8 @@ main {
   font-size: 16px;
 }
 
-.bground {
+.bground,
+.bground-confirmation {
   display: none;
   position: fixed;
   z-index: 1;
@@ -296,6 +297,14 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
+.errormsg {
+  position: relative;
+  margin: 12px 36px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #fe142f;
+}
+
 .close {
   position: absolute;
   right: 15px;
@@ -527,3 +536,12 @@ footer {
   }
 }
 
+/*confirmation screen*/
+
+.confirmation-text {
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 2rem;
+  margin: 25vh 0;
+}
