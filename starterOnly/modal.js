@@ -39,10 +39,10 @@ function printError(elemId, hintMsg) {
 function validate(){
 
   //DOM elements for validation
-  const firstName = document.reserve.first.value;
-  const lastName = document.reserve.last.value;
+  const firstName = document.reserve.first.value.trim;
+  const lastName = document.reserve.last.value.trim;
   const location = document.reserve.location.value;
-  const email = document.reserve.email.value;
+  const email = document.reserve.email.value.trim;
   const birthDate = document.reserve.birthdate.value;
   const tournament = document.reserve.quantity.value;
   const terms = document.getElementById('checkbox1');
@@ -53,7 +53,7 @@ function validate(){
   //validating first name with minimum of 2 characters
   
   if (firstName.length < 2) {
-    printError("firstNameError", "Veuillez saisir au moins 2 caractères pour votre prénom")
+    printError("firstNameError", "Veuillez saisir au moins 2 caractères pour votre prénom")
   } else {
   // added a validation to make sure only alpahbetical characters are used by using a regular expression
     var regex = /^[a-zA-Z\s]+$/;                
