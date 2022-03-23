@@ -68,7 +68,7 @@ function validate(){
   //validating surname with minimum of 2 characters
   
   if (lastName.length < 2) {
-    printError("lastNameError", "Veuillez saisir au moins 2 caractères pour votre nom de famille")
+    printError("lastNameError", "Veuillez saisir au moins 2 caractères pour votre nom de famille")
   } else {
   // added a validation to make sure only alpahbetical characters are used by using a regular expression
     var regex = /^[a-zA-Z\s]+$/;                
@@ -138,7 +138,8 @@ if (!terms.checked) {
 
   if (firstNameErr || lastNameErr || emailErr || birthDateErr || tournamentErr || locErr || termsErr  == true) {
     return false;
-  } else {
+  } 
+  else {
     return true;
   }
 }
@@ -167,5 +168,3 @@ function resetMsg() {
 closeModal.addEventListener("click", () => {
   modalbg.style.display = "none";
 })
-
-
