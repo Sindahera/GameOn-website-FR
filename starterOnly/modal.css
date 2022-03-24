@@ -28,6 +28,7 @@ p {
 
 img {
   padding-right: 1rem;
+  margin: 5px;
 }
 
 .topnav {
@@ -66,6 +67,22 @@ img {
 
 .topnav .icon {
   display: none;
+  color: #ff0000
+}
+
+@media screen and (max-width: 1024px) {
+  .topnav {
+    margin: 1.5%;
+  }
+
+  .topnav a {
+    font-size: 14px;
+  }
+
+  .header-logo img {
+    width: 200px;
+    margin: 10px 15px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -90,14 +107,16 @@ img {
   }
 }
 
-
-
  @media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+  }
+
+  .header-logo img {
+    width: 150px;
+    margin: 15px;
   }
 } 
 
@@ -111,8 +130,24 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
+}
 
+@media screen and (max-width: 1024px) {
+  main {
+    font-size: 110%;
+  }
+}
 
+@media screen and (max-width: 800px) {
+  main {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  main {
+    font-size: 60%;
+  }
 }
 
 .modal-btn {
@@ -304,6 +339,7 @@ input[data-error]::after {
   font-weight: normal;
   color: #fe142f;
 }
+
 .close {
   position: absolute;
   right: 15px;
@@ -335,7 +371,7 @@ input[data-error]::after {
   display: block;
   margin: 0 auto;
   border-radius: 7px;
-  font-size: 1rem;
+  font-size: 1.3rem;
   padding: 12px 82px;
   color: #fff;
   cursor: pointer;
@@ -412,6 +448,7 @@ input[data-error]::after {
   font-weight: normal;
   font-size: 16px;
 }
+/*hero section*/
 .hero-section {
   min-height: 93vh;
   border-radius: 10px;
@@ -457,7 +494,6 @@ input[data-error]::after {
 .btn-signup {
   outline: none;
   text-transform: capitalize;
-  font-size: 1.3rem;
   padding: 15px 23px;
   margin: 0;
   margin-top: 59px;
@@ -470,13 +506,14 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+  margin: 0;
 }
 .copyrights {
   color: #fe142f;
   padding: 0;
   font-size: 1rem;
   margin: 60px 0 30px;
-  font-weight: bolder;
+  font-weight: 700;
 }
 .hero-section > .btn-signup {
   display: none;
@@ -486,15 +523,17 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .hero-section {
     display: block;
     box-shadow: unset;
+    min-height: 0;
   }
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px;
+    padding: 0;
+    min-width: 0;
   }
   .hero-content::after {
     content: unset;
@@ -503,12 +542,36 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 5rem;
     white-space: normal;
+    text-align: center;
   }
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  .hero-img img {
+    display: block;
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+  .hero-section > .btn-signup {
+    display: block;
+    margin: 32px auto 10px;
+    padding: 12px 35px;
+  }
+  .copyrights {
+    margin-top: 0;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hero-headline {
+    font-size: 3.5rem;
+  }
+  .hero-text {
+    width: unset;
   }
   .hero-img img {
     border-radius: 10px;
@@ -519,9 +582,44 @@ footer {
     margin: 32px auto 10px;
     padding: 12px 35px;
   }
+}
+
+@media screen and (max-width: 540px) {
+
+  .hero-content {
+    min-width: 0;
+    margin-top: 20px;
+  }
+
+  .hero-headline {
+    font-size: 3rem;
+    white-space: nowrap;
+  }
+
+  .btn-signup {
+    font-size: 12px;
+    padding: 10px 18px;
+  }
+
+  .hero-img img {
+    margin-top: 20px;
+  }
+
   .copyrights {
-    margin-top: 50px;
-    text-align: center;
+    font-size: 9px;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .hero-headline {
+    font-size: 2rem;
   }
 }
 
